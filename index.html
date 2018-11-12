@@ -7,7 +7,7 @@
 <meta name="keywords" content="apartment, rent, agent, midland, buy, sell, real estate, realty">
 <meta name="description" content="Listing coming to the market soon from The Hoover Group!">
 <meta name="author" content="Jeremy Hoover">
-<title>ROOM TO GROW ON GORDONVILLE! - $100,000 | Modern Realty</title>
+<title>HAPPY HOME ON HAMILTON! - $80,000 | Modern Realty</title>
 <!-- Favicons-->
 <link rel="shortcut icon" href="http://www.modernrealty.us/ico/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" type="image/x-icon" href="http://www.modernrealty.us/ico/apple-icon-57x57.png">
@@ -18,21 +18,6 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.10.0/validate.min.js"></script>
-
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '1684596781823770');
-fbq('track', "PageView");</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1684596781823770&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
 
 <style>
 * {box-sizing: border-box;}
@@ -81,59 +66,8 @@ hesitate call today to set up your own private showing!</p>
 <hr>
 <p><strong>Get the price, address, full listing details, 30+ images, video walkthrough, and option to schedule a showing!</strong></p>
 
-<?php
-/*form submission*/
-if(isset($_POST['submitted'])) {
-
-/*create variables*/
-$source="1092 Gordonville FB Ad";
-$firstname=trim($_POST['firstName']);
-$lastname=trim($_POST['lastName']);
-$name= $firstname . ' ' . $lastname;
-$email=trim($_POST['contactEmail']);
-$phone=trim($_POST['contactPhone']);
-$address=trim($_POST['contactAddress']);
-$mlsnumber='';
-$buyerorseller=trim($_POST['buyerSeller']);;
-$contactNotes=trim($_POST['contactNotes']);
-$notes= $contactNotes;
-
-
-/*create email message*/
-$emailTo = "jeremy.hoover@myleads.io";
-$ccTo = "jeremy@modernrealty.us";
-$subject = '1092 Gordonville Lead';
-$body = "Source: $source \n";
-$body .= "Name: $name \n";
-$body .= "Email: $email \n";
-$body .= "Phone: $phone \n";
-$body .= "Address: $address \n";
-$body .= "MLS Number: $mlsnumber \n"; /*mls number is required*/
-$body .= "Notes: $notes \n";
-$headers = 'From: 1092 Gordonville Coming Soon <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
-
-/*Lead Email Message */
-$subject1 = "1092 W Gordonville, Midland";
-$body1 = "Hi, \r\n\r\nThanks for your interest in 1092 W Gordonville, Midland. You can view the full listing details, images, and video walkthrough at: http://www.modernrealty.us/realestate/comingsoon/1497660. \r\n\r\nIf you have any questions at all or would like to schedule a time to check it out in person, please contact The Hoover Group via text at: (989) 492-0050 or by replying directly to this email. \r\n\r\nThanks and we look forward to working with you! \r\n\r\nThe Hoover Group\r\n(989) 492-0050\r\njeremy@modernrealty.us";
-$headers1 = 'From: Jeremy Hoover <'.$ccTo.'>' . "\r\n" . 'Reply-To: ' . $ccTo;
-
-
-mail($emailTo, $subject, $body, $headers); /*send email to Top Producer*/
-mail($ccTo, $subject, $body, $headers); /*send additional email to admin*/
-mail($email, $subject1, $body1, $headers1); /*send additional email to lead*/
-
-$emailSent=true; /*email has been sent*/
-
-}
-
-if($emailSent == true) { /*display a thank you message*/ 
-
-echo "<br><h2>Thanks for your interest, you'll be receiving the information via email shortly!</h2>";
-
-$emailSent=false; /*reset variable for additional submissions */
-} else { ?>
-
-<form action="" id="contactForm" method="post">
+  
+<form action="https://formspree.io/your@email.com" id="contactForm" method="post">
 
 <p>
 <input data-validation="email" type="email" name="contactEmail" id="contactEmail" placeholder="Enter Email" value=""/>
@@ -148,7 +82,6 @@ $emailSent=false; /*reset variable for additional submissions */
 
 
 </div> 
-<?php } ?>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.20/jquery.form-validator.min.js"></script>
